@@ -107,9 +107,4 @@ public class RomanNumeraUtils {
         
     }
 
-    public static void main(String[] args) {
-        System.out.println(toRomanNumeral(223));
-    }
-
-
 }
