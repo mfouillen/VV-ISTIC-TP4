@@ -3,7 +3,6 @@ package fr.istic.vv;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import static java.util.Map.entry;
 
@@ -95,7 +94,7 @@ public class RomanNumeraUtils {
             entry(1, "I")
         );
 
-        Set<Integer> values = converter.keySet();
+        List<Integer> values = Arrays.asList(1000, 900, 500, 400, 100, 90, 50, 40 ,10, 9, 5, 4, 1);
 
         for(int value : values){
             while(number >= value) {
