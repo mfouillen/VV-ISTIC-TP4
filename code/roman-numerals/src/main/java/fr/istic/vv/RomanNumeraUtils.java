@@ -75,7 +75,12 @@ public class RomanNumeraUtils {
         return number; 
     }
 
-    public static String toRomanNumeral(int number) {
+    public static String toRomanNumeral(int number) throws IOException {
+
+        if(number <=  0 || number > 3999) {
+            throw new IOException("roman numeral is invalid");
+        }
+
         String romanNumeral = "";
 
         Map<Integer, String> converter = Map.ofEntries(

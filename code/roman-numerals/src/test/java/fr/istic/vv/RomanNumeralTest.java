@@ -13,7 +13,7 @@ public class RomanNumeralTest {
 	}
 
     @Property
-    boolean containsOnlyValidSymbols(@ForAll("inBounds") int i){
+    boolean containsOnlyValidSymbols(@ForAll("inBounds") int i) throws IOException{
         List<Character> symbols = Arrays.asList('I', 'V', 'X', 'L', 'C', 'D', 'M');
         String romanNumeral = RomanNumeraUtils.toRomanNumeral(i);
         for (Character c : romanNumeral.toCharArray()) {
@@ -25,7 +25,7 @@ public class RomanNumeralTest {
     }
 
     @Property
-    boolean symbolsCorrectlyRepeated(@ForAll("inBounds") int i){
+    boolean symbolsCorrectlyRepeated(@ForAll("inBounds") int i) throws IOException{
         List<String> unvalidSequences = Arrays.asList("IIII", "VV", "XXXX", "LL", "CCCC", "DD", "MMMM");
         String romanNumeral = RomanNumeraUtils.toRomanNumeral(i);
 
@@ -40,7 +40,7 @@ public class RomanNumeralTest {
     }
 
     @Property
-    boolean testIsValidRomanNumeral(@ForAll("inBounds") int i) {
+    boolean testIsValidRomanNumeral(@ForAll("inBounds") int i) throws IOException {
         return RomanNumeraUtils.isValidRomanNumeral(RomanNumeraUtils.toRomanNumeral(i));
     }
 
